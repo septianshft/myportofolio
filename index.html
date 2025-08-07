@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Septian</a>
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="particles-container" id="particlesContainer"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hi, I'm <span class="highlight">Septian Rizqi</span><br>Engineer Fresh Grad</h1>
+
+                <p>I'm majoring in industrial engineering with expertise in backend development, CAD tools, and SAP systems. I combine technical skills with engineering knowledge to deliver robust solutions. I'm a fast learner and team player who thrives on new challenges and continuous growth opportunities.</p>
+                <div class="btn-container">
+                    <a href="#projects" class="btn">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="invert-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Industrial Engineer & Software Dev. Enthusiast</h3>
+                    <p>Welcome to my portfolio! I'm a fresh graduate industrial engineer with a passion for technology and process improvement. I combine engineering principles with technical skills to create efficient solutions.</p>
+                    <p>My expertise includes industrial process optimization, CAD design, SAP systems, and backend development. I focus on applying analytical thinking and problem-solving skills to deliver practical results.</p>
+                    <p>When I'm not working, I enjoy learning new technologies, participating in engineering projects, and expanding my knowledge in both industrial and software domains.</p>
+                    <a href="#" class="btn">Download CV</a>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Skills</h2>
+            </div>
+            <div class="skills-content">
+                <div class="skills-grid">
+                    
+                    <!-- <div class="skill-card" onclick="showCertificateModal(this)">
+                        <div class="skill-header">
+                            <div class="skill-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3>Data Science</h3>
+                        </div>
+                        <div class="skill-proficiency">
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 95%"></div>
+                            </div>
+                            <span class="proficiency-value">95%</span>
+                        </div>
+                        <div class="certificates hidden">
+                            <div class="certificate">
+                                <div class="certificate-image">
+                                    <img src="certification/data science-cert.jpg" alt="Data Science Certificate" class="certificate-thumbnail">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <p>Advanced HTML5 Certification</p>
+                            </div>
+                        </div>
+                        
+                        <div class="certificate-modal hidden">
+                            <span class="close-modal">&times;</span>
+                            <img src="certification/data science-cert.jpg" alt="Data Science Certificate Full" class="certificate-full">
+                        </div>
+                    </div> -->
+                    
+                    <!-- <div class="skill-card">
+                        <div class="skill-header">
+                            <div class="skill-icon">
+                                <i class="fab fa-css3-alt"></i>
+                            </div>
+                            <h3>CSS3</h3>
+                        </div>
+                        <div class="skill-proficiency">
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 90%"></div>
+                            </div>
+                            <span class="proficiency-value">90%</span>
+                        </div>
+                        <div class="certificates">
+                            <div class="certificate">
+                                <div class="certificate-image">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <p>CSS Grid & Flexbox Expert</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-header">
+                            <div class="skill-icon">
+                                <i class="fab fa-js"></i>
+                            </div>
+                            <h3>JavaScript</h3>
+                        </div>
+                        <div class="skill-proficiency">
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 85%"></div>
+                            </div>
+                            <span class="proficiency-value">85%</span>
+                        </div>
+                        <div class="certificates">
+                            <div class="certificate">
+                                <div class="certificate-image">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <p>JavaScript ES6+ Certification</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-header">
+                            <div class="skill-icon">
+                                <i class="fab fa-react"></i>
+                            </div>
+                            <h3>React</h3>
+                        </div>
+                        <div class="skill-proficiency">
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 80%"></div>
+                            </div>
+                            <span class="proficiency-value">80%</span>
+                        </div>
+                        <div class="certificates">
+                            <div class="certificate">
+                                <div class="certificate-image">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <p>React Developer Certification</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-header">
+                            <div class="skill-icon">
+                                <i class="fab fa-node-js"></i>
+                            </div>
+                            <h3>Node.js</h3>
+                        </div>
+                        <div class="skill-proficiency">
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 75%"></div>
+                            </div>
+                            <span class="proficiency-value">75%</span>
+                        </div>
+                        <div class="certificates">
+                            <div class="certificate">
+                                <div class="certificate-image">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <p>Backend Development with Node</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-header">
+                            <div class="skill-icon">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <h3>UI/UX Design</h3>
+                        </div>
+                        <div class="skill-proficiency">
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 70%"></div>
+                            </div>
+                            <span class="proficiency-value">70%</span>
+                        </div>
+                        <div class="certificates">
+                            <div class="certificate">
+                                <div class="certificate-image">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <p>UX Design Professional</p>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Projects</h2>
+            </div>
+            <!-- <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>E-Commerce Platform</h3>
+                        <p>A full-featured online shopping experience with product filtering, cart functionality, and secure checkout.</p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">MongoDB</span>
+                        </div>
+                        <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Task Management App</h3>
+                        <p>A productivity application for teams to manage projects, assign tasks, and track progress in real-time.</p>
+                        <div class="project-tags">
+                            <span class="tag">Vue.js</span>
+                            <span class="tag">Firebase</span>
+                            <span class="tag">Tailwind CSS</span>
+                        </div>
+                        <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Health & Fitness Tracker</h3>
+                        <p>A comprehensive health application that tracks workouts, nutrition, and wellness metrics with data visualization.</p>
+                        <div class="project-tags">
+                            <span class="tag">React Native</span>
+                            <span class="tag">Redux</span>
+                            <span class="tag">D3.js</span>
+                        </div>
+                        <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Let's Connect and Discuss Opportunities</h3>
+                    <p>I'm eager to explore new opportunities and collaborations. Whether you have a project in mind or just want to connect, I'd love to hear from you!</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p>capt@pdevlab.co.id</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <p>+62 822-1325-2152</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="contact-text">
+                                <h4>Location</h4>
+                                <p>South Tangerang, Banten</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://github.com/septianshft" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="www.linkedin.com/in/septianrizqi" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/aseptian_rizqi?utm_source=qr&igsh=MW10cDJibmppcjhxdA==" class="social-link"><i class="fab fa-instagram"></i></a>                    
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm" action="mailto:septianhkc@gmail.com" method="POST" enctype="text/plain">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-control" placeholder="Enter subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" class="form-control" placeholder="Enter your message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>DevPortfolio</h3>
+                    <p>Creating beautiful digital experiences with clean code and thoughtful design.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                        <li><a href="#">Mobile Apps</a></li>
+                        <li><a href="#">Consulting</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 DevPortfolio. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
