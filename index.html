@@ -12,7 +12,7 @@
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <a href="#" class="logo">Septian</a>
+            <a href="#" class="logo">SeptianPorto</a>
             <div class="mobile-toggle">
                 <i class="fas fa-bars"></i>
             </div>
@@ -53,9 +53,9 @@
             <div class="about-content">
                 <div class="about-text">
                     <h3>Industrial Engineer & Software Dev. Enthusiast</h3>
-                    <p>Welcome to my portfolio! I'm a fresh graduate industrial engineer with a passion for technology and process improvement. I combine engineering principles with technical skills to create efficient solutions.</p>
-                    <p>My expertise includes industrial process optimization, CAD design, SAP systems, and backend development. I focus on applying analytical thinking and problem-solving skills to deliver practical results.</p>
-                    <p>When I'm not working, I enjoy learning new technologies, participating in engineering projects, and expanding my knowledge in both industrial and software domains.</p>
+                    <p style="text-align: justify">Welcome to my portfolio! I'm a fresh graduate industrial engineer with a passion for technology and process improvement. I combine engineering principles with technical skills to create efficient solutions.</p>
+                    <p style="text-align: justify">My expertise includes industrial process optimization, CAD design, SAP systems, and backend development. I focus on applying analytical thinking and problem-solving skills to deliver practical results.</p>
+                    <p style="text-align: justify">When I'm not working, I enjoy learning new technologies, participating in engineering projects, and expanding my knowledge in both industrial and software domains.</p>  
                     <a href="#" class="btn">Download CV</a>
                 </div>
                 <div class="about-image">
@@ -76,59 +76,74 @@
             <div class="skills-content">
                 <div class="skills-grid">
                     
-                    <!-- <div class="skill-card" onclick="showCertificateModal(this)">
-                        <div class="skill-header">
-                            <div class="skill-icon">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <h3>Data Science</h3>
+                    <div class="skill-card">
+                        <div class="certificate-preview" onclick="openCertModal('certification/data science-cert.jpg', 'Data Science Certificate')">
+                            <img 
+                                src="certification/data science-cert.jpg" 
+                                alt="Data Science Certificate" 
+                                class="certificate-thumbnail" 
+                                style="max-width: 100%; height: auto; object-fit: cover; cursor: pointer;"
+                            >
                         </div>
-                        <div class="skill-proficiency">
-                            <div class="progress-bar">
-                                <div class="progress" style="width: 95%"></div>
-                            </div>
-                            <span class="proficiency-value">95%</span>
-                        </div>
-                        <div class="certificates hidden">
-                            <div class="certificate">
-                                <div class="certificate-image">
-                                    <img src="certification/data science-cert.jpg" alt="Data Science Certificate" class="certificate-thumbnail">
-                                    <i class="fas fa-certificate"></i>
+                        <div class="skill-info">
+                            <div class="skill-header">
+                                <div class="skill-icon">
+                                    <i class="fas fa-chart-line"></i>
                                 </div>
-                                <p>Advanced HTML5 Certification</p>
+                                <h3>Data Science</h3>
+                            </div>
+                            <div class="skill-proficiency">
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 95%"></div>
+                                </div>
+                                <span class="proficiency-value">95%</span>
+                            </div>
+                            <div class="certificates">
+                                <div class="certificate certificate-item">
+                                    <p>Sanbercode Bootcamp - Data Science Certificate</p>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="certificate-modal hidden">
-                            <span class="close-modal">&times;</span>
-                            <img src="certification/data science-cert.jpg" alt="Data Science Certificate Full" class="certificate-full">
-                        </div>
-                    </div> -->
+                    </div>
+
+                    <!-- Certificate Modal (moved outside skill-card to be global) -->
+                    <div id="certificateModal" class="modal">
+                        <span class="close-button">&times;</span>
+                        <img class="modal-content" id="modalCertImage">
+                        <div id="caption"></div>
+                    </div>
                     
-                    <!-- <div class="skill-card">
-                        <div class="skill-header">
-                            <div class="skill-icon">
-                                <i class="fab fa-css3-alt"></i>
-                            </div>
-                            <h3>CSS3</h3>
+                    <div class="skill-card">
+                        <div class="certificate-preview" onclick="openCertModal('certification/fundamental web dev.png', 'Fundamental Web Development Certificate')">
+                            <img 
+                                src="certification/fundamental web dev.png" 
+                                alt="Fundamental Web Development Certificate" 
+                                class="certificate-thumbnail" 
+                                style="max-width: 100%; height: auto; object-fit: cover; cursor: pointer;"
+                            >
                         </div>
-                        <div class="skill-proficiency">
-                            <div class="progress-bar">
-                                <div class="progress" style="width: 90%"></div>
-                            </div>
-                            <span class="proficiency-value">90%</span>
-                        </div>
-                        <div class="certificates">
-                            <div class="certificate">
-                                <div class="certificate-image">
-                                    <i class="fas fa-certificate"></i>
+                        <div class="skill-info">
+                            <div class="skill-header">
+                                <div class="skill-icon">
+                                    <i class="fab fa-css3-alt"></i>
                                 </div>
-                                <p>CSS Grid & Flexbox Expert</p>
+                                <h3>Web Development</h3>
+                            </div>
+                            <div class="skill-proficiency">
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 90%"></div>
+                                </div>
+                                <span class="proficiency-value">90%</span>
+                            </div>
+                            <div class="certificates">
+                                <div class="certificate certificate-item">
+                                    <p>Fundamental Web Development Certificate - Coding Studio</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="skill-card">
+                    <!-- <div class="skill-card">
                         <div class="skill-header">
                             <div class="skill-icon">
                                 <i class="fab fa-js"></i>
@@ -142,7 +157,7 @@
                             <span class="proficiency-value">85%</span>
                         </div>
                         <div class="certificates">
-                            <div class="certificate">
+                            <div class="certificate certificate-item">
                                 <div class="certificate-image">
                                     <i class="fas fa-certificate"></i>
                                 </div>
@@ -165,7 +180,7 @@
                             <span class="proficiency-value">80%</span>
                         </div>
                         <div class="certificates">
-                            <div class="certificate">
+                            <div class="certificate certificate-item">
                                 <div class="certificate-image">
                                     <i class="fas fa-certificate"></i>
                                 </div>
@@ -188,7 +203,7 @@
                             <span class="proficiency-value">75%</span>
                         </div>
                         <div class="certificates">
-                            <div class="certificate">
+                            <div class="certificate certificate-item">
                                 <div class="certificate-image">
                                     <i class="fas fa-certificate"></i>
                                 </div>
@@ -211,7 +226,7 @@
                             <span class="proficiency-value">70%</span>
                         </div>
                         <div class="certificates">
-                            <div class="certificate">
+                            <div class="certificate certificate-item">
                                 <div class="certificate-image">
                                     <i class="fas fa-certificate"></i>
                                 </div>
@@ -230,26 +245,52 @@
             <div class="section-title">
                 <h2>My Projects</h2>
             </div>
-            <!-- <div class="projects-grid">
+            <div class="projects-grid">
                 <div class="project-card">
+                    <!-- Project Image Section -->
                     <div class="project-image">
-                        <div class="image-placeholder">
-                            <i class="fas fa-shopping-cart"></i>
-                        </div>
+                        <img src="Project/HRIS_(ThesisProject)/Admin_Dashboard.png" 
+                             alt="HRIS Project Preview" 
+                             class="project-preview-image" 
+                             onclick="openProjectModal('Project/HRIS_(ThesisProject)/Admin_Dashboard.png', 'Project/HRIS_(ThesisProject)/Admin_Request_Management.png', 'Project/HRIS_(ThesisProject)/Admin_adminAccount_management.png', 'Project/HRIS_(ThesisProject)/Admin_project_management.png', 'Project/HRIS_(ThesisProject)/Admin_recuiter_management.png', 'Project/HRIS_(ThesisProject)/Admin_talent_management.png', 'Project/HRIS_(ThesisProject)/Login Page.png')">
                     </div>
+
+                    <!-- Project Content Section -->
                     <div class="project-content">
-                        <h3>E-Commerce Platform</h3>
-                        <p>A full-featured online shopping experience with product filtering, cart functionality, and secure checkout.</p>
+                        <h3>HRIS</h3>
+                        <p class="project-description">
+                            <span style="text-align: justify" class="description-text">
+                                Human Resource Information System (HRIS) is a web application that helps organizations manage their human resources efficiently. It provides features such as employee management, behaviour management, payroll management, and performance evaluation.
+                            </span>
+                            <a href="#" class="see-more-btn">See More</a>
+                        </p>
+
                         <div class="project-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">Node.js</span>
-                            <span class="tag">MongoDB</span>
+                            <span class="tag">Laravel 11</span>
+                            <span class="tag">MySQL</span>
+                            <span class="tag">Tailwind CSS</span>
+                            <span class="tag">Vite</span>
+                            <span class="tag">Alpine.js</span>
+                            <span class="tag">Axios</span>
                         </div>
                         <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
+
+                <!-- Project Modal -->
+                <div id="projectModal" class="modal">
+                    <span class="close-button" onclick="closeProjectModal()">&times;</span>
+                    <div class="modal-content">
+                        <img id="projectModalImage" src="" alt="Project Image">
+                        <div class="project-modal-navigation">
+                            <button class="prev-button" onclick="prevProjectImage()">&lt;</button>
+                            <button class="next-button" onclick="nextProjectImage()">&gt;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
                 
-                <div class="project-card">
+                <!-- <div class="project-card">
                     <div class="project-image">
                         <div class="image-placeholder">
                             <i class="fas fa-tasks"></i>
@@ -283,8 +324,8 @@
                         </div>
                         <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
                     </div>
-                </div>
-            </div> -->
+                </div> -->
+            </div>
         </div>
     </section>
 
@@ -297,8 +338,7 @@
             <div class="contact-container">
                 <div class="contact-info">
                     <h3>Let's Connect and Discuss Opportunities</h3>
-                    <p>I'm eager to explore new opportunities and collaborations. Whether you have a project in mind or just want to connect, I'd love to hear from you!</p>
-                    
+                    <p style="text-align: justify">I'm eager to explore new opportunities and collaborations. Whether you have a project in mind or just want to connect, I'd love to hear from you!</p>
                     <div class="contact-details">
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
@@ -355,13 +395,19 @@
         </div>
     </section>
 
+    <!-- Certificate Modal -->
+    <div id="certificateModal" class="modal">
+        <span class="close-button">&times;</span>
+        <img class="modal-content" id="modalCertImage">
+    </div>
+
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-col">
-                    <h3>DevPortfolio</h3>
-                    <p>Creating beautiful digital experiences with clean code and thoughtful design.</p>
+                    <h3>Personal Portofolio</h3>
+                    <p>Combining industrial engineering expertise with technical skills to deliver innovative solutions.</p>
                     <div class="social-links">
                         <a href="https://github.com/septianshft" class="social-link"><i class="fab fa-github"></i></a>
                         <a href="www.linkedin.com/in/septianrizqi" class="social-link"><i class="fab fa-linkedin-in"></i></a>
@@ -382,7 +428,7 @@
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 DevPortfolio. All Rights Reserved.</p>
+                <p>&copy; 2025 SeptianPorto. All Rights Reserved.</p>
             </div>
         </div>
     </footer>

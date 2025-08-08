@@ -1,4 +1,108 @@
 // Mobile Navigation Toggle
+// Certificate Modal Functionality
+const certificateModal = document.getElementById('certificateModal');
+const modalCertImage = document.getElementById('modalCertImage');
+const closeButton = document.querySelector('.close-button');
+
+function openCertModal(imageSrc, altText) {
+    modalCertImage.src = imageSrc;
+    modalCertImage.alt = altText;
+    certificateModal.style.display = 'block';
+}
+
+// Close the modal when the close button is clicked
+if (closeButton) {
+    closeButton.addEventListener('click', () => {
+        certificateModal.style.display = 'none';
+    });
+}
+
+// Close the modal when clicking outside the modal content
+if (certificateModal) {
+    window.addEventListener('click', (event) => {
+        if (event.target == certificateModal) {
+            certificateModal.style.display = 'none';
+        }
+    });
+}
+
+// Attach event listeners to certificate items
+document.addEventListener('DOMContentLoaded', () => {
+    const certificateItems = document.querySelectorAll('.certificate-item');
+    certificateItems.forEach(item => {
+        const img = item.querySelector('img');
+        if (img) {
+            const imageSrc = img.src;
+            const altText = img.alt;
+            item.addEventListener('click', () => {
+                openCertModal(imageSrc, altText);
+            });
+        }
+    });
+});
+
+// Project Image Modal Functionality
+const projectModal = document.getElementById('projectModal');
+const projectModalImage = document.getElementById('projectModalImage');
+let currentProjectImages = [];
+let currentProjectImageIndex = 0;
+
+function openProjectModal(...imageSrcs) {
+    currentProjectImages = imageSrcs;
+    currentProjectImageIndex = 0;
+    projectModalImage.src = currentProjectImages[currentProjectImageIndex];
+    projectModal.style.display = 'block';
+}
+
+function closeProjectModal() {
+    projectModal.style.display = 'none';
+}
+
+function nextProjectImage() {
+    currentProjectImageIndex = (currentProjectImageIndex + 1) % currentProjectImages.length;
+    projectModalImage.src = currentProjectImages[currentProjectImageIndex];
+}
+
+function prevProjectImage() {
+    currentProjectImageIndex = (currentProjectImageIndex - 1 + currentProjectImages.length) % currentProjectImages.length;
+    projectModalImage.src = currentProjectImages[currentProjectImageIndex];
+}
+
+document.querySelector('#projectModal .close-button').addEventListener('click', closeProjectModal);
+
+window.addEventListener('click', (event) => {
+    if (event.target == projectModal) {
+        closeProjectModal();
+    }
+});
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// "See More" functionality for project descriptions
+document.querySelectorAll('.see-more-btn').forEach(button => {
+    button.addEventListener('click', function(e) {
+        e.preventDefault();
+        const descriptionContainer = this.closest('.project-description');
+        if (descriptionContainer) {
+            descriptionContainer.classList.toggle('expanded');
+            if (descriptionContainer.classList.contains('expanded')) {
+                this.textContent = 'See Less';
+            } else {
+                this.textContent = 'See More';
+            }
+        }
+    });
+});
+
 const mobileToggle = document.querySelector('.mobile-toggle');
 const navMenu = document.querySelector('nav ul');
 
@@ -198,6 +302,48 @@ function initWebGLParticles(container) {
     const fragmentShader = compileShader(fragmentShaderSource, gl.FRAGMENT_SHADER);
     
     const program = gl.createProgram();
+
+// Certificate Modal Functionality
+const certificateModal = document.getElementById('certificateModal');
+const modalCertImage = document.getElementById('modalCertImage');
+const closeButton = document.querySelector('.close-button');
+
+function openCertModal(imageSrc, altText) {
+    modalCertImage.src = imageSrc;
+    modalCertImage.alt = altText;
+    certificateModal.style.display = 'block';
+}
+
+// Close the modal when the close button is clicked
+if (closeButton) {
+    closeButton.addEventListener('click', () => {
+        certificateModal.style.display = 'none';
+    });
+}
+
+// Close the modal when clicking outside the modal content
+if (certificateModal) {
+    window.addEventListener('click', (event) => {
+        if (event.target == certificateModal) {
+            certificateModal.style.display = 'none';
+        }
+    });
+}
+
+// Attach event listeners to certificate items
+document.addEventListener('DOMContentLoaded', () => {
+    const certificateItems = document.querySelectorAll('.certificate-item');
+    certificateItems.forEach(item => {
+        const img = item.querySelector('img');
+        if (img) {
+            const imageSrc = img.src;
+            const altText = img.alt;
+            item.addEventListener('click', () => {
+                openCertModal(imageSrc, altText);
+            });
+        }
+    });
+});
     gl.attachShader(program, vertexShader);
     gl.attachShader(program, fragmentShader);
     gl.linkProgram(program);

@@ -307,14 +307,14 @@ section {
 }
 
 .skill-card {
-    background: var(--secondary);
+    background-color: var(--secondary);
     border-radius: 8px;
-    overflow: hidden;
     box-shadow: var(--shadow);
     transition: var(--transition);
-    transform: translateY(0);
-    border: 1px solid #eeeeee;
-    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
 }
 
 .skill-card:hover {
@@ -322,94 +322,157 @@ section {
     box-shadow: var(--shadow-lg);
 }
 
-.skill-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.skill-icon {
-    font-size: 2rem;
-    color: var(--primary);
-    margin-right: 15px;
-    width: 50px;
-    height: 50px;
+.certificate-preview {
+    width: 100%;
+    height: 180px; /* Fixed height for the preview */
+    overflow: hidden;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0.05);
-    border-radius: 8px;
+    background-color: var(--light); /* Placeholder background */
 }
 
-.skill-header h3 {
-    font-size: 1.5rem;
-    color: var(--primary);
-    margin: 0;
-}
-
-.skill-proficiency {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.progress-bar {
-    flex: 1;
-    height: 10px;
-    background-color: #eeeeee;
-    border-radius: 5px;
-    overflow: hidden;
-    margin-right: 15px;
-}
-
-.progress {
+.certificate-preview img {
+    width: 100%;
     height: 100%;
-    background-color: var(--primary);
-    border-radius: 5px;
-    transition: width 1s ease-in-out;
+    object-fit: cover; /* Ensure the image covers the area */
+    display: block;
 }
 
-.proficiency-value {
-    font-weight: 600;
-    color: var(--primary);
-    min-width: 40px;
-    text-align: right;
+.skill-info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.certificates {
-    margin-top: 20px;
-}
-
-.certificate {
+.skill-header {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
 }
 
-.certificate:last-child {
-    margin-bottom: 0;
-}
-
-.certificate-image {
-    font-size: 1.5rem;
-    color: var(--accent);
+.skill-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
     margin-right: 15px;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.05);
-    border-radius: 6px;
 }
 
-.certificate p {
-    margin: 0;
+.skill-header h3 {
+    font-size: 1.6rem;
+    color: var(--primary);
+}
+
+.skill-proficiency {
+    margin-top: 15px;
+}
+
+.progress-bar {
+    background-color: var(--light);
+    border-radius: 5px;
+    height: 10px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.progress {
+    background-color: var(--accent);
+    height: 100%;
+    border-radius: 5px;
+}
+
+.proficiency-value {
+    font-weight: 600;
     color: var(--dark-gray);
     font-size: 0.9rem;
 }
 
+.certificates {
+    margin-top: 15px;
+}
+
+.certificate {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.certificate p {
+    font-size: 0.85rem;
+    color: var(--dark-gray);
+    text-align: left;
+}
+
 /* Projects Section */
+.project-preview-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.project-modal-navigation {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.project-modal-navigation button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.5em;
+    border-radius: 5px;
+}
+
+.project-modal-navigation button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.project-description {
+    position: relative;
+    max-height: 4.5em; /* Approximately 3 lines of text */
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.project-description .description-text {
+    display: block;
+}
+
+.project-description .see-more-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #fff; /* Or your project card background color */
+    padding-left: 10px;
+    font-size: 0.9em;
+    color: #007bff; /* Or your link color */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.project-description.expanded {
+    max-height: none;
+}
+
+.project-description.expanded .see-more-btn {
+    position: static;
+    display: block;
+    text-align: right;
+    margin-top: 5px;
+}
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -674,6 +737,71 @@ footer {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: var(--gray);
     font-size: 0.9rem;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+#certificateModal .modal-content,
+#projectModal .modal-content {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%; /* Increased width for better use of space */
+    max-width: 900px; /* Increased max-width */
+    height: 90vh; /* Use viewport height to ensure it fits on screen */
+    max-height: 90vh;
+}
+
+#projectModalImage {
+    max-width: 100%;
+    max-height: 90%; /* Adjust based on navigation button height */
+    object-fit: contain; /* Ensures the entire image is visible */
+}
+
+/* Add Animation */
+@keyframes zoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 /* Animations */
