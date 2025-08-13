@@ -137,28 +137,7 @@ window.addEventListener('scroll', () => {
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        // a little bit of validation to make sure that the fields are not empty
-        if (
-            !document.getElementById('name').value ||
-            !document.getElementById('email').value ||
-            !document.getElementById('subject').value ||
-            !document.getElementById('message').value
-        ) {
-            alert('Please fill in all fields');
-            return;
-        }
-
-
-        emailjs.sendForm('service_kt7dky3', 'template_b7i6577', contactForm, 'b0jmMStj7XU-YxFr2')
-            .then(() => {
-                alert('Message sent successfully!');
-                contactForm.reset();
-            }, (error) => {
-                alert('Failed to send message. Please try again later.');
-                console.log('FAILED...', error);
-            });
+        // Allow the mailto link to work
     });
 };
 
@@ -176,7 +155,7 @@ const handleScroll = () => {
 
 // Animation on scroll
 const animateOnScroll = () => {
-    const elements = document.querySelectorAll('.skill-card, .project-card, .about-text, .about-image, .contact-info, .contact-form');
+    const elements = document.querySelectorAll('.skill-card, .project-card, .about-text, .about-image, .contact-info, .contact-form, .experience-item');
     
     elements.forEach(element => {
         const elementPosition = element.getBoundingClientRect().top;
@@ -203,6 +182,23 @@ document.querySelectorAll('.skill-card, .project-card, .about-text, .about-image
 window.addEventListener('scroll', animateOnScroll);
 // Initial check in case elements are already in view
 window.addEventListener('load', animateOnScroll);
+
+// Intersection Observer for scroll animations
+const animatedElements = document.querySelectorAll('.fade-in-up');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+        }
+    });
+}, {
+    threshold: 0.1
+});
+
+animatedElements.forEach(element => {
+    observer.observe(element);
+});
 
 // WebGL Particles Implementation
 document.addEventListener('DOMContentLoaded', function() {
