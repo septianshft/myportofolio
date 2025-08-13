@@ -137,17 +137,7 @@ window.addEventListener('scroll', () => {
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // Get form values
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        
-        // Show success message
-        alert(`Thank you ${name}! Your message has been sent. I'll contact you at ${email} soon.`);
-        
-        // Reset form
-        contactForm.reset();
+        // Allow the mailto link to work
     });
 };
 
