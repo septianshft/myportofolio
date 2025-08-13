@@ -137,7 +137,28 @@ window.addEventListener('scroll', () => {
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
-        // Allow the mailto link to work
+        e.preventDefault();
+
+        // a little bit of validation to make sure that the fields are not empty
+        if (
+            !document.getElementById('name').value ||
+            !document.getElementById('email').value ||
+            !document.getElementById('subject').value ||
+            !document.getElementById('message').value
+        ) {
+            alert('Please fill in all fields');
+            return;
+        }
+
+
+        emailjs.sendForm('service_kt7dky3', 'template_b7i6577', contactForm, 'b0jmMStj7XU-YxFr2')
+            .then(() => {
+                alert('Message sent successfully!');
+                contactForm.reset();
+            }, (error) => {
+                alert('Failed to send message. Please try again later.');
+                console.log('FAILED...', error);
+            });
     });
 };
 
